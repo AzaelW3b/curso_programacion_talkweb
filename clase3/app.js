@@ -4,7 +4,7 @@
 //  Una *Function Declaration* se declara al inicio del programa cuando
 // el motor de javascript lee el archivo. Eso significa que podemos invocarla antes de
 // haberla escrito físicamente
-console.log("precio con iva (declaration)", precioConIva(100)) // ✅ Funciona
+console.log("precio con iva (declaration)", precioConIva(100)) // Funciona
 
 // Declaramos la función *después* de la llamada anterior.
 function precioConIva (subtotal, iva = 0.16) {
@@ -23,7 +23,7 @@ function precioConIva (subtotal, iva = 0.16) {
 
 // Ahora sí la definimos; a partir de aquí podemos usarla.
 const precioConIva2 = (subtotal, iva = 0.30) => subtotal + (subtotal * iva)
-console.log("precio con iva (expression)", precioConIva2(200)) //  Funciona
+console.log("precio con iva (expression)", precioConIva2(200)) // Funciona
 
 
 // - Function Declaration: se escanea COMPLETA - puedes llamarla antes.
