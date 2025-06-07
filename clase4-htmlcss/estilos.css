@@ -1,19 +1,58 @@
-/* box-sizing */
+/* Clase 4:  Objetos, Arreglos, Array Methods y fundamentos de HTML Y CSS3
+Autor: Azael Garcia Jaimes - Líder técnico | Talkweb  
+ */
+
+/* =============================
+   Demostración de box‑sizing en CSS
+   =============================
+   
+   Objetivo:
+   Aplicar el modelo de caja "border-box" de forma global para que
+   width y height incluyan padding y border en el cálculo total. Esto
+   evita sorpresas al diseñar componentes.
+*/
+
+/* --------------------------------------------------------------
+   1. Declaración global
+   --------------------------------------------------------------
+   Al asignar `box-sizing: border-box` al elemento raíz (<html>),
+   todos los elementos que hereden esta propiedad contabilizarán su
+   ancho y alto de forma más intuitiva: 300 px siguen siendo 300 px
+   aunque agreguemos padding o borders.
+*/
 html {
     box-sizing: border-box;
 }
 
+/* --------------------------------------------------------------
+   2. Reset universal
+   --------------------------------------------------------------
+   El selector universal (*) y sus pseudo‑elementos (::before y ::after)
+   heredan la regla anterior. De esta manera, TODOS los elementos de la
+   página comparten el mismo modelo de caja, evitando inconsistencias.
+*/
 *, *::after, *::before {
     box-sizing: inherit;
 }
+
+/* --------------------------------------------------------------
+   3. Ejemplo práctico
+   --------------------------------------------------------------
+   .caja es un cuadrado de 300 px. Con border-box, el padding NO
+   aumenta esas dimensiones; simplemente se "come" espacio interno.
+*/
 .caja {
-    width:300px;
-    height: 300px;
+    width: 300px;      /* ancho fijo */
+    height: 300px;     /* alto fijo  */
     background-color: green;
-    /* shorthand */
+
+    /* shorthand de padding → 40 px en eje Y (top y bottom),
+       0 px en eje X (left y right).                         */
     padding: 40px 0px;
-    /* padding-top: 20px;
-    padding-right: 20px;
-    padding-bottom:20px ;
-    padding-left:20px ; */
+
+    /* Desglose equivalente por claridad didáctica:          */
+    /* padding-top:    40px; */
+    /* padding-right:  0px;  */
+    /* padding-bottom: 40px; */
+    /* padding-left:   0px;  */
 }
