@@ -1,0 +1,62 @@
+/* custom properties */
+:root {
+    --primario: #ff6b00;
+    --secundario: #3b82f6;
+    --terceario: #0d3bb6;
+    --blanco: #fff;
+    --overlay:rgba(0,0,0,0.6);
+    --fuente: "Montserrat", sans-serif;
+}
+
+/* 
+16px
+LOS REMS SE CALCULAN BASADO EN EL USER AGENT
+
+16 x 1 = 16
+16 x 2 = 32
+16 x 3 = 48
+
+*/
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--fuente);
+}
+
+.header {
+    /* dynamyc viewport heigth */
+    min-height: 100dvh;
+    position: relative;
+    padding: 2rem 0 6rem;
+}
+/* 2 */
+.header__video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    inset: 0;
+    z-index: -2;
+}
+
+/* 1 */
+.header__overlay {
+    position: absolute;
+    background: var(--overlay);
+    inset: 0;
+    z-index: -1;
+    
+}
+
+.contenedor__navegacion {
+    display: flex;
+    justify-content: space-around;
+}
