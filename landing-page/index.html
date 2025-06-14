@@ -1,50 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/estilos.css">
 </head>
+
 <body>
-    <!-- BEM
+  <!-- BEM
     B: BLOQUE
     E: ELEMENTO
     M: MODIFICADOR 
-    
+          
     -->
 
-    <header class="header">
-        <video 
-            class="header__video"
-            src="./assets/video/bg.mp4"
-            autoplay
-            loop
-            muted
-            playsinline>
-        </video>
+  <header class="header">
+    <video class="header__video" src="./assets/video/bg.mp4" autoplay loop muted playsinline>
+    </video>
 
-        <div class="header__overlay"></div>
+    <div class="header__overlay"></div>
 
-        <div class="container contenedor__navegacion">
+    <div class="container contenedor__navegacion">
 
-            <h1 class="logo">Agencia</h1>
+      <h1 class="logo">Agencia</h1>
 
-            <nav class="navegacion">
-                <a href="#inicio">Inicio</a>
-                <a href="#inicio">Nosotros</a>
-                <a href="#inicio">Servicios</a>
-                <a href="#inicio">Contacto</a>
-            </nav>  
-        
-           
+      <nav class="navegacion">
+        <a href="#inicio">Inicio</a>
+        <a href="#inicio">Nosotros</a>
+        <a href="#inicio">Servicios</a>
+        <a href="#inicio" class="btn btn--primary btn--nav">Contacto</a>
+      </nav>
+
+    </div>
+
+    <div class="header__contenido container">
+      <h1 class="header__titulo">Bienvenido a la Agencia</h1>
+      <p class="header__sub">Tu agencia digital de confianza</p>
+      <p class="header__texto">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus adipisci perferendis corrupti dicta…
+      </p>
+
+      <div class="header__acciones">
+        <a href="#servicios" class="btn btn--primary">Nuestros servicios</a>
+        <a href="#contacto" class="btn btn--outline">Contáctanos</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="nosotros container">
+    <h2>Sobre nosotros</h2>
+    <div class="nosotros__container">
+      <div class="nosotros__galeria">
+        <div class="nosotros__img img--1">
+          <img src="./assets/img/nosotros-1.jpg" alt="gente hablando">
         </div>
-    </header>
+        <div class="nosotros__img img--2">
+          <img src="./assets/img/nosotros-2.jpg" alt="mujer posando">
+        </div>
 
+        <div class="nosotros__img img--3">
+          <img src="./assets/img/nosotros-3.jpg" alt="persona trabajando">
+
+        </div>
+      </div>
+
+      <div class="nosotros__contenido">
+        <h2>Más información de nosotros</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, esse voluptatibus accusantium, sit fuga
+          corrupti doloremque veritatis quod reprehenderit laboriosam nisi dicta magni incidunt est eveniet sint hic
+          iusto fugiat!
+        </p>
+        <a href="#servicios" class="btn btn--primary">Saber más</a>
+      </div>
+
+    </div>
+
+  </section>
 
 </body>
+
 </html>

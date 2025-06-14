@@ -36,6 +36,39 @@ body {
     min-height: 100dvh;
     position: relative;
     padding: 2rem 0 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.4rem;
+    border-radius: 0.4rem;
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+    }
+}
+
+.btn--primary {
+    background-color: var(--primario);
+    color: var(--blanco);
+    border: none;
+}
+.btn--outline {
+    background: transparent;
+    color: var(--blanco);
+    border: 2px solid var(--blanco);
+  
+}
+img {
+    max-width: 100%;
+}
+.container {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
 }
 /* 2 */
 .header__video {
@@ -58,5 +91,96 @@ body {
 
 .contenedor__navegacion {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--blanco);
+    font-weight: 900;
+}
+
+.navegacion  {
+    a {
+     color: var(--blanco);
+     margin-left: 2rem;
+     text-decoration: none;
+     font-weight: 600;
+     transition: opacity 0.2s ease-in-out;
+     /* pseudo selector */
+     &:hover {
+        opacity: 0.5;
+     }
+    }
+}
+
+
+.header__contenido {
+    height: 70rem;
+}
+
+.header__titulo {
+    font-size: 4rem;
+    color: var(--blanco);
+}
+
+.header__sub {
+    font-size: 2rem;
+    color: var(--blanco);
+    margin: 0 0 2rem;
+}
+
+.header__texto {
+    color: var(--blanco);
+    margin-bottom: 3rem;
+}
+
+/* Sobre nosotros */
+.nosotros {
+    padding: 5rem;
+}
+
+.nosotros__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.6rem;
+}
+
+.nosotros__galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.6rem;
+}
+
+.img--1 {
+    grid-column: 1;
+    grid-row: 1;
+    aspect-ratio: 1/1;
+}
+.img--2 {
+    grid-column: 1;
+    grid-row: 2;
+    aspect-ratio: 1/1;
+}
+.img--3 {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+.nosotros__img {
+    img  {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.6rem;
+    }
+}
+.nosotros__contenido {
+    h2 {
+        font-size: 2.4rem;
+        margin-bottom: 1.6rem;
+    }
 }
