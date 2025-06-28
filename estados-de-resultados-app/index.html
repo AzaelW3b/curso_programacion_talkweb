@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Esta de resultados</title>
+</head>
+
+<body>
+
+    <main class="contenedor__principal">
+        <div class="contenedor contenedor__app">
+            <header class="header">
+                <h1 class="header__title">Estados de resultados</h1>
+                <p class="header__description">
+                    Genera estados de resultados a partir de ciertos criterios
+                </p>
+            </header>
+
+            <button class="btn__estados__resultados">
+                Crear estado de resultado
+            </button>
+
+            <div class="table-wrapper">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre de la empresa</th>
+                            <th>Fecha de inicio</th>
+                            <th>Fecha de Fin</th>
+                            <th>Utilidad Bruta</th>
+                            <th>Total de costos operativos</th>
+                            <th>Utilidad antes de impuestos</th>
+                            <th>Impuestos</th>
+                            <th>Utilidad/Ganancia Neta</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tableResultados">
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+
+
+        <form class="formulario ocultar">
+
+            <div class="primera__parte">
+                <div class="formulario__campo">
+                    <label for="nombre-empresa">Nombre de la empresa</label>
+                    <input type="text" id="nombre-empresa" placeholder="Nombre de la empresa">
+                </div>
+
+                <div class="formulario__campo">
+                    <label for="fecha-inicio">Fecha de Inicio</label>
+                    <input type="date" id="fecha-inicio">
+                </div>
+
+
+                <div class="formulario__campo">
+                    <label for="fecha-fin">Fecha de Fin</label>
+                    <input type="date" id="fecha-fin">
+                </div>
+
+
+
+                <div class="formulario__campo">
+                    <label for="total-ventas">Total de ventas</label>
+                    <input type="number" id="total-ventas" min="0.0" placeholder="Ingresa el total de ventas">
+                </div>
+
+
+                <div class="formulario__campo">
+                    <label for="costo-ventas">Costo de ventas</label>
+                    <input type="number" id="costo-ventas" min="0.0"
+                        placeholder="Ingresa el total del costo de la venta">
+                </div>
+
+                <div class="formulario__campo">
+                    <p>Utilidad bruta:</p>
+                    <p>$0</p>
+                </div>
+            </div>
+
+
+            <hr class="linea-separadora">
+
+            <div class="formulario__campo">
+                <label for="costo-operativo-nombre">Costo operativo</label>
+                <div class="formulario__costo_operativo">
+                    <input type="text" id="costo-operativo-nombre"
+                        placeholder="Nombre del costo (ej. Luz, agua, renta, salarios)">
+                    <input type="number" id="costo-operativo-valor" min="0.0" step="0.01" placeholder="Valor del costo">
+                </div>
+                <button type="button" id="add-costo-operativo-btn">Agregar</button>
+            </div>
+
+            <table class="lista-costos">
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Monto</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-costos"></tbody>
+            </table>
+
+            <p class="total-costos-operativos">
+                <strong>Total de costos operativos</strong>
+                <span class="total-costo-operativo">$0.00</span>
+            </p>
+
+
+            <div class="formulario__campo">
+                <label for="depreciacion">Depreciación</label>
+                <input type="number" id="depreciacion" min="0.0" placeholder="Ingresa el total de la depreciación">
+            </div>
+
+
+            <div class="formulario__campo">
+                <p>Gastos Operativos</p>
+                <p class="gastos-operativos">$0</p>
+            </div>
+
+            <div class="formulario__campo">
+                <label for="costos-financieros">Costos financieros</label>
+                <input type="number" id="costos-financieros" min="0.0" placeholder="Ingresa el total de los costos financieros">
+            </div>
+
+            <hr class="linea-separadora">
+
+            <div class="formulario_totales">
+                <p>Utilidad antes de impuestos</p>
+                <p class="utilidad-antes-impuestos">$0</p>
+            </div>
+
+             <div class="formulario_totales">
+                <p>Calculo de impuesto del 30%</p>
+                <p class="utilidad-antes-impuestos">$0</p>
+            </div>
+
+             <div class="formulario_totales">
+                <p>Utilidad neta</p>
+                <p class="utilidad-neta">$0</p>
+            </div>
+
+            <button type="submit" class="btn-generar">Generar estado de resultados</button>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+        </form>
+
+    </main>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
