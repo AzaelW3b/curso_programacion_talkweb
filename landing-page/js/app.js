@@ -1,15 +1,23 @@
 const footerCopy = document.querySelector('.footer__copy')
-const todosLosEnlaces = document.querySelectorAll('a')
 const fechaActual = new Date()
-
-// footerCopy.textContent = " HOLA"
 footerCopy.textContent = `© ${fechaActual.getFullYear()} - Talkweb. Todos los derechos reservados`
 
-console.log(footerCopy)
-console.log(fechaActual)
-console.log(todosLosEnlaces)
+// menu hamburguesa
 
-todosLosEnlaces.forEach(enlace => {
-    enlace.textContent = 'modificado'
-    console.log(enlace)
+const menuBtn = document.querySelector('.menu')
+const nav = document.querySelector('.navegacion')
+// Eventos
+
+menuBtn.addEventListener('click', ()=> {
+    // toggle boolean
+    console.log('Abriendo menu....')
+    nav.classList.toggle('navegacion--open')
+    menuBtn.classList.toggle('menu--open')
+})
+
+nav.querySelectorAll('a').forEach(link=> {
+    link.addEventListener('click', () => {
+        nav.classList.remove('navegacion--open')
+        menuBtn.classList.remove('menu--open')
+    })
 })
