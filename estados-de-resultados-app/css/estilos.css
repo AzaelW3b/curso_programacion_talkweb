@@ -30,10 +30,10 @@ body {
     box-sizing: inherit;
 }
 
-/* 
+
 .ocultar {
     display: none;
-} */
+}
 .contenedor {
     max-width: 1800px;
     margin: 0 auto;
@@ -52,7 +52,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     
+}
+.delete-btn {
+    background-color: var(--error);
+    color: var(--blanco);
+    border: none;
+    padding: 1rem 3rem;
+    font-weight: bold;
 }
 
 .btn__estados__resultados {
@@ -69,7 +77,6 @@ body {
 }
 
 .contenedor__app {
-    display: none;
     background-color: var(--blanco);
     padding: 20px;
     border-radius: .8rem;
