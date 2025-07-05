@@ -173,7 +173,12 @@
                 <div class="formulario__costo_operativo">
                     <input type="text" id="costo-operativo-nombre"
                         placeholder="Nombre del costo (ej. Luz, agua, renta, salarios)">
-                    <input type="number" id="costo-operativo-valor" min="0.0" step="0.01" placeholder="Valor del costo">
+                    <input 
+                        type="number" 
+                        id="costo-operativo-valor"
+                        min="0.0" 
+                        step="0.01" 
+                        placeholder="Valor del costo">
                 </div>
                 <button class="btn btn-agregar-costo" type="button" id="add-costo-operativo-btn">Agregar</button>
             </div>
@@ -186,12 +191,12 @@
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody id="lista-costos"></tbody>
+                <tbody id="lista-costos-body"></tbody>
             </table>
 
             <p class="total-costos-operativos">
                 <strong>Total de costos operativos</strong>
-                <span class="total-costo-operativo">$0.00</span>
+                <span id="total-costo-operativo">$0.00</span>
             </p>
 
 
@@ -203,7 +208,7 @@
 
             <div class="formulario__campo">
                 <p>Gastos Operativos</p>
-                <p class="gastos-operativos">$0</p>
+                <p id="gastos-operativos">$0</p>
             </div>
 
             <div class="formulario__campo">
@@ -215,17 +220,17 @@
 
             <div class="formulario_totales">
                 <p>Utilidad antes de impuestos</p>
-                <p class="utilidad-antes-impuestos">$0</p>
+                <p id="utilidad-antes-impuestos">$0</p>
             </div>
 
              <div class="formulario_totales">
                 <p>Calculo de impuesto del 30%</p>
-                <p class="utilidad-antes-impuestos">$0</p>
+                <p id="total-impuestos">$0</p>
             </div>
 
              <div class="formulario_totales">
                 <p>Utilidad neta</p>
-                <p class="utilidad-neta">$0</p>
+                <p id="utilidad-neta">$0</p>
             </div>
 
             <button type="submit" class="btn btn-generar">Generar estado de resultados</button>

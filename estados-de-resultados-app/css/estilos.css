@@ -41,6 +41,20 @@ body {
     width: 95%;
 }
 
+.delete {
+    background-color: var(--error);
+    border: none;
+    padding: 1.5rem;
+    width: 30px;
+    height: 30px;
+    color: var(--blanco);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
 .btn__estados__resultados {
     background-color: var(--secundario);
     color: var(--blanco);
