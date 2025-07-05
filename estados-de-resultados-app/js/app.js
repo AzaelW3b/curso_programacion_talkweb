@@ -105,7 +105,6 @@ botonCostoOperativo.addEventListener('click', (e) => {
     const resultado = costosOperativos.reduce((sum, elemento) => sum + elemento.valor, 0)
     totalCostOperativoContainer.textContent = formatMoneda(resultado)
     totalesCostos.totalCostosOperativos = resultado
-    console.log(resultado)
 
    
 })
@@ -117,10 +116,7 @@ depreciacion.addEventListener('input', (e)=> {
 
 costosFinancieros.addEventListener('change', (e)=> {
     totalesCostos.costosFinancieros = Number(e.target.value)
-    console.log('costos financieros', Number(e.target.value))
     const utilidadAntesImpuestos = utilidadBruta.utilidadBrutaTotal - totalesCostos.totalCostosOperativos -  totalesCostos.costosFinancieros
-    console.log(utilidadAntesImpuestos)
-    console.log(totalesCostos)
     utilidadAntesDeImpuestosElement.textContent = `${formatMoneda(utilidadAntesImpuestos)}`
     
     const impuestos = (utilidadAntesImpuestos * 0.3) || 0
@@ -129,7 +125,6 @@ costosFinancieros.addEventListener('change', (e)=> {
     const utilidadNetaTotal = utilidadAntesImpuestos - impuestos
     utilidadNeta.textContent = `${formatMoneda(utilidadNetaTotal)}`
 
-    console.log(impuestos)
 })
 
 
@@ -141,7 +136,6 @@ formulario.addEventListener('submit', (e) => {
         console.log('Todos los campos son obglitarios')    
         return
     }
-    console.log(utilidadBruta)
   
 })
 
@@ -153,7 +147,6 @@ const renderUtilidadBruta = ()=> {
         // Number method
         utilidadBrutaContenedor.textContent = formatMoneda(resultado)
         utilidadBruta.utilidadBrutaTotal = resultado
-        console.log('El resultado es', resultado)
     
     }
 }
@@ -170,5 +163,3 @@ const formatMoneda = (valor) => {
     })
 
 }
-
-console.log(formulario)
