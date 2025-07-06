@@ -43,7 +43,7 @@ const utilidadNeta = document.querySelector('#utilidad-neta')
 
 let costosOperativos = []
 
-let estadosResultados = []
+let estadosResultados = JSON.parse(localStorage.getItem('estadoResultado')) || [];
 
 // Object literal, estado
 const utilidadBruta = {
@@ -188,8 +188,11 @@ formulario.addEventListener('submit', (e) => {
         utilidadNeta: Number(utilidadNeta.textContent.replace(/[^0-9.-]+/g,""))
     }
 
-    estadosResultados = [...estadosResultados, estadoResultado]
-    localStorage.setItem("estadoResultado", JSON.stringify(estadosResultados))
+    
+  estadosResultados.push(estadoResultado)          
+  localStorage.setItem('estadoResultado',
+                       JSON.stringify(estadosResultados))
+    pintarEstado(estadoResultado, estadosResultados.length - 1)
     formulario.reset()
     listaCostosBody.innerHTML = ''
     costosOperativos = []
@@ -214,10 +217,10 @@ const renderUtilidadBruta = ()=> {
 // Arrancamos la aplicación y se muestra la tabla
 
 (function () {
-    const estadosResultado = JSON.parse(localStorage.getItem("estadoResultado")) || []
+    // const estadosResultado = JSON.parse(localStorage.getItem("estadoResultado")) || []
     // el arreglo tiene minimo un elemento
-    if (estadosResultado.length > 0) {
-        estadosResultado.forEach((estado, index) => {
+    if (estadosResultados.length > 0) {
+        estadosResultados.forEach((estado, index) => {
             const tr = document.createElement('tr')
             tr.innerHTML = `
                 <td>${index + 1}</td>
@@ -276,6 +279,26 @@ estadosResultadosTable.addEventListener('click', (e) => {
 })
 
 
+function pintarEstado(estado, index) {
+  const tr = document.createElement('tr');
+
+  tr.innerHTML = `
+    <td>${index + 1}</td>
+    <td>${estado.nombreEmpresa}</td>
+    <td>${estado.fechaInicio}</td>
+    <td>${estado.fechaFin}</td>
+    <td>${formatMoneda(estado.utilidadBrutaTotal)}</td>
+    <td>${formatMoneda(estado.totalCostosOperativos)}</td>
+    <td>${formatMoneda(estado.utilidadAntesImpuestos)}</td>
+    <td>${formatMoneda(estado.totalImpuestos)}</td>
+    <td>${formatMoneda(estado.utilidadNeta)}</td>
+    <td>
+      <button type="button" class="delete-btn" data-index="${index}">Eliminar</button>
+    </td>
+  `;
+
+  estadosResultadosTable.appendChild(tr);
+}
 
 
 // helpers, hoisting
